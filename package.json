@@ -1,0 +1,23 @@
+{
+  "name": "demo_cypress12",
+  "version": "1.0.0",
+  "description": "Proyecto de Pruebas Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run --spec cypress/e2e/Recaudaciones.cy.js --browser chrome "
+  },
+  "keywords": [
+    "cypress",
+    "testing",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Jonathan Uriña",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.1"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^5.0.8"
+  }
+}

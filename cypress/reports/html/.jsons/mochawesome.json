@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-14T10:19:41.989Z",
+    "end": "2022-06-14T10:20:11.564Z",
+    "duration": 29575,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "47503d9f-2627-41dd-ad29-e84229816940",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoketestbanco.cy.js",
+      "file": "cypress\\e2e\\smoketestbanco.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "277a7494-b438-422f-b46e-9b9aaf28c197",
+          "title": "Test suite - conjunto de pruebas",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validar pagina de inicio",
+              "fullTitle": "Test suite - conjunto de pruebas Validar pagina de inicio",
+              "timedOut": null,
+              "duration": 2564,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".active > img\").should(\"be.visible\");\ncy.get(\".active > .custom > h4\").contains(\"Online Banking\");",
+              "err": {},
+              "uuid": "7dcb5ec6-4acb-4f1e-9828-9e01768554a8",
+              "parentUUID": "277a7494-b438-422f-b46e-9b9aaf28c197",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Prueba E2E - transferencia de fondos ",
+              "fullTitle": "Test suite - conjunto de pruebas Prueba E2E - transferencia de fondos ",
+              "timedOut": null,
+              "duration": 9501,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signin_button\").click();\ncy.get(\"#user_login\").type(\"username\");\ncy.get(\"#user_password\").type(\"password\");\ncy.get(\".btn\").click();\ncy.get(\"#transfer_funds_tab > a\").click();\ncy.get(\"#tf_fromAccountId\").select(\"1\");\ncy.get(\"#tf_toAccountId\").select(\"5\");\ncy.get(\"#tf_amount\").type(\"300\");\ncy.get(\"#tf_description\").type(\"Transferencia de prueba 300\");\ncy.get(\"#btn_submit\").click();\ncy.get(\"#btn_submit\").click();\ncy.get(\".alert\").contains(\"You successfully submitted your transaction.\");",
+              "err": {},
+              "uuid": "ba44de17-2d43-4279-8647-c2ef437b9fd3",
+              "parentUUID": "277a7494-b438-422f-b46e-9b9aaf28c197",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Prueba de validacion de actualizacion del grafico",
+              "fullTitle": "Test suite - conjunto de pruebas Prueba de validacion de actualizacion del grafico",
+              "timedOut": null,
+              "duration": 12632,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signin_button\").click();\ncy.get(\"#user_login\").type(\"username\");\ncy.get(\"#user_password\").type(\"password\");\ncy.get(\".btn\").click();\ncy.get('#money_map_tab > a').click();\ncy.get('#ext-sprite-1259').should(\"be.visible\");\ncy.get('#ext-sprite-1167 > tspan').click();\ncy.get('#ext-sprite-1259').should(\"not.be.visible\");",
+              "err": {},
+              "uuid": "16de2a3f-6aad-425e-8c7e-1d8013ec0097",
+              "parentUUID": "277a7494-b438-422f-b46e-9b9aaf28c197",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7dcb5ec6-4acb-4f1e-9828-9e01768554a8",
+            "ba44de17-2d43-4279-8647-c2ef437b9fd3",
+            "16de2a3f-6aad-425e-8c7e-1d8013ec0097"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24697,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
