@@ -36,10 +36,49 @@ const IdRuta = 'SALGO DE CASA Y AVANZO 5 CUADRAS......'
 
 //Datos Educativos
 const IdInstitucion = 'BACHILLERATO';
-const IdProfesion = '15';
+const IdProfesion = 'Programadores de aplicaciones';
 const IdDetalle = 'PRE';
 const IdCheckDetalle = 'POR CULMINAR';
 const IdDetalle2 = 'PRE';
+
+//Informacion Adicional
+const IdTatuaje = '4';
+const IdCuerpo = 'VARIAS PARTES CUERPO'
+
+//Licencia
+const licencia = 'A';
+const TipoSangre = "AB+";
+
+//Informacion de Contacto
+const idname = 'JOAN';
+const idDireccion1 = 'GUASMO SUR';
+const idtelefonia = '042790452';
+const idcell = '09060803145';
+const idpariente = 'Padre';
+
+//SUBMODULE SOCIAL
+const IdEnfermedad = 'ALERGIA';
+const IdDonde = 'CASA';
+const idtipoAlergia = 'POLVO';
+const idaccidente = 'CALLE'
+const IdOperacion = 'APENDICE'
+
+//ENFERMEDAD
+const Idtalla = '38';
+const IdtallaPantalon = '26';
+const Idzapatos = '42';
+const talla = '26';
+const tipo = 'MASCARILLA';
+const detalle = 'viejas';
+const IdReligion = 'CATOLICO';
+
+//ASPECTO DE VIVIENDA
+const N_vivienda = '4';
+const ComparteVivienda = 'FAMILIARES';
+const TipoVivienda = 'VILLA';
+const Idtenencia = 'PROPIA';
+const M_Construccion = 'CEMENTO';
+const condicion = 'CONSTRUIDO';
 
    it('Validar ingreso GDS', () => {
         cy.visit('http://172.16.11.24:7200/guest/sign-in');
@@ -164,53 +203,162 @@ const IdDetalle2 = 'PRE';
         // cy.get('#floatingEspecificacion').type(IdRuta)
 
         //Datos Educativos--------------------------------------------------------------------------------------------
-        cy.get(':nth-child(7) > .p-toolbar > .row > :nth-child(2) > .p-float-label > .p-inputwrapper > .p-dropdown').click();
-        cy.get('#pr_id_14_list').should('be.visible').contains(IdInstitucion).click();
-        cy.wait(2000)
-        cy.get(':nth-child(7) > .p-toolbar > .row > :nth-child(3) > .p-float-label > .p-inputwrapper > .p-dropdown').click();
-
-        
-        cy.get('#pr_id_15_list').scrollIntoView().should('be.visible').contains(IdProfesion).click();
-
-
-        cy.wait(2000)
-        cy.get('#floatingCelularContacto').type(IdDetalle)
-        cy.wait(2000)
-        cy.get(':nth-child(5) > .form-floating > .p-element > .p-inputswitch > .p-inputswitch-slider').click()
-        cy.wait(2000)
-        cy.get('.col-12.ng-star-inserted > .p-float-label > #floatingCelularContacto').type(IdDetalle2)
-
-
+        // cy.get(':nth-child(7) > .p-toolbar > .row > :nth-child(2) > .p-float-label > .p-inputwrapper > .p-dropdown').click();
+        // cy.get('#pr_id_14_list').should('be.visible').contains(IdInstitucion).click();
+        // cy.wait(2000)
+        // cy.get(':nth-child(7) > .p-toolbar > .row > :nth-child(3) > .p-float-label > .p-inputwrapper > .p-dropdown').click()
+        // cy.get('#pr_id_15_list > :nth-child(3) > .p-ripple').type(IdProfesion);
+        // cy.wait(5000); 
+        // cy.get('#floatingCelularContacto').type(IdDetalle)
+        // cy.wait(2000)
+    
         //Estudia Actualmente------------------------------------------------------------------------------------------
         // cy.get(':nth-child(5) > .form-floating > .p-element > .p-inputswitch > .p-inputswitch-slider').click()
-        // cy.get('.col-12.ng-star-inserted > .p-float-label > #floatingCelularContacto').type('POR CULMINAR')
+        // cy.wait(2000)
+        // cy.get('.col-12.ng-star-inserted > .p-float-label > #floatingCelularContacto').type(IdDetalle2)
         // cy.wait(1000)
 
-        //Informacion Adicional
+        //Informacion Adicional------------------------------------------------------------------------------------------------------------
         //tiene tatuaje
         // cy.get(':nth-child(9) > .p-toolbar > .row > :nth-child(2) > .form-floating > .p-element > .p-inputswitch > .p-inputswitch-slider').click()
-        // cy.get(':nth-child(3) > .p-float-label > #floatingCelularContacto').type('4')
-        // cy.get(':nth-child(9) > .p-toolbar > .row > :nth-child(4) > .p-float-label > #floatingCelularContacto').type('CUERPO')
+        // cy.get(':nth-child(3) > .p-float-label > #floatingCelularContacto').type(IdTatuaje)
+        // cy.get(':nth-child(9) > .p-toolbar > .row > :nth-child(4) > .p-float-label > #floatingCelularContacto').type(IdCuerpo)
         //licencia de conducir
         // cy.get(':nth-child(9) > .p-toolbar > .row > :nth-child(4) > .form-floating > .p-element > .p-inputswitch > .p-inputswitch-slider').click()
         // cy.get('.col-12.ng-star-inserted > .p-float-label > .p-inputwrapper > .p-dropdown').click()
-        // cy.get('#pr_id_52_list > :nth-child(1) > .p-ripple').type('A')
+        // cy.get('#pr_id_52_list > :nth-child(2) > .p-ripple').type(licencia)
+
+
 
         // cy.get(':nth-child(9) > .p-toolbar > .row > :nth-child(6) > .p-float-label > .p-inputwrapper > .p-dropdown').click()
-        // cy.get('#pr_id_16_list > :nth-child(7) > .p-ripple').type('O+')    
-
-        // //Informacion de Contacto
-        // cy.get('.p-toolbar > .row > .col-md-3 > .p-element').click()
-        // cy.get('.row > :nth-child(1) > .p-float-label > #floatingContacto').type('JUANA')
-        // cy.get(':nth-child(2) > .p-float-label > #floatingDireccionContacto').type('GUASMO SUR')
-        // cy.get('#floatingTelefonoContacto').type('0960803145')
-        // cy.get('.section-table-container > .row > :nth-child(4) > .p-float-label > #floatingCelularContacto').type('0960803145')
-        // cy.get('.section-table-container > .row > :nth-child(5) > .p-float-label > .p-inputwrapper > .p-dropdown').click()
-        // cy.get('.p-dropdown-filter').type('ESPOSA')
+        // cy.get('#pr_id_16_list > .p-element.ng-star-inserted > .p-ripple').should('be.visible').contains(TipoSangre).click();    
         // cy.wait(1000)
 
+        // //Informacion de Contacto----------------------------------------------------------------------------------------------------------
+        // cy.get('.p-toolbar > .row > .col-md-3 > .p-element').click()
+        // cy.get('.row > :nth-child(1) > .p-float-label > #floatingContacto').type(idname)
+        // cy.get(':nth-child(2) > .p-float-label > #floatingDireccionContacto').type(idDireccion1)
+        // cy.get('#floatingTelefonoContacto').type(idtelefonia)
+        // cy.get('.section-table-container > .row > :nth-child(4) > .p-float-label > #floatingCelularContacto').type(idcell)
+        // cy.get('.section-table-container > .row > :nth-child(5) > .p-float-label > .p-inputwrapper > .p-dropdown').click()
+        // cy.get('.p-dropdown-filter').type(idpariente)
+        // cy.get('#pr_id_52_list > .p-element.ng-star-inserted > .p-ripple').click()
+        // cy.wait(1000)
 
-    });   
+        //SUBMODULE SOCIAL---------------------------------------------------------------------------------------------------------------------
+     
+        cy.get('#p-tabpanel-1-label').click();
+
+        // //ENFERMEDAD
+        // cy.get(':nth-child(1) > .p-toolbar > .row > :nth-child(2) > .form-floating > .p-element > .p-inputswitch > .p-inputswitch-slider').click()
+        // cy.get(':nth-child(3) > .p-float-label > #floatingCelularContacto').type(IdEnfermedad)
+        // cy.get(':nth-child(1) > .p-toolbar > .row > :nth-child(4) > .form-floating > .p-element > .p-inputswitch > .p-inputswitch-slider').click()
+        // cy.get(':nth-child(5) > .p-float-label > #floatingCelularContacto').type(IdDonde)
+        // cy.wait(1000)
+
+        // cy.get(':nth-child(7) > .form-floating > .p-element > .p-inputswitch > .p-inputswitch-slider').click()
+        // cy.get(':nth-child(8) > .p-float-label > #floatingCelularContacto').type(idtipoAlergia)
+        // cy.wait(1000)
+
+        // cy.get('.row > :nth-child(10) > .form-floating > .p-element > .p-inputswitch > .p-inputswitch-slider').click()
+        // cy.get(':nth-child(11) > .p-float-label > #floatingCelularContacto').type(idaccidente)
+        // cy.wait(1000)
+
+        // cy.get(':nth-child(13) > .form-floating > .p-element > .p-inputswitch > .p-inputswitch-slider').click()
+        // cy.get(':nth-child(14) > .p-float-label > #floatingCelularContacto').type(IdOperacion)
+        // cy.wait(1000)
+
+        // // DEPENDENCIA LABORAL
+
+        // cy.get(':nth-child(3) > .p-toolbar > .row > :nth-child(2) > .p-float-label > .p-inputwrapper > .p-dropdown').click()
+        // cy.get('#pr_id_17_list > :nth-child(1) > .p-ripple').type(Idtalla) // El selector real va aquí
+        // cy.wait(1000);
+
+        
+        // cy.get(':nth-child(3) > .p-toolbar > .row > :nth-child(3) > .p-float-label > .p-inputwrapper > .p-dropdown').click()
+        // cy.get('#pr_id_18_list > :nth-child(3) > .p-ripple').type(IdtallaPantalon)
+        // cy.wait(1000)
+
+        // cy.get('#p-tabpanel-1 > :nth-child(3) > .p-toolbar > .row > :nth-child(4) > .p-float-label > .p-inputwrapper > .p-dropdown').click()
+        // cy.get('#pr_id_19_list > :nth-child(2) > .p-ripple').type(Idzapatos)
+        // cy.wait(1000)
+
+        // cy.get(':nth-child(1) > [style="text-align: center;"] > .p-element').click()
+        // cy.wait(1000)
+
+        // cy.get('.p-checkbox-box').click()
+        // cy.wait(1000)
+
+        // cy.get(':nth-child(3) > p-celleditor.p-element > .p-inputwrapper > .p-dropdown > .p-dropdown-trigger > .p-dropdown-trigger-icon').click()
+        // cy.get('#pr_id_52_list > .p-element.ng-star-inserted > .p-ripple').first().type(talla);
+        // cy.wait(1000)
+
+        // cy.get(':nth-child(4) > p-celleditor.p-element > .p-inputwrapper > .p-dropdown > .p-dropdown-trigger').click()
+        // cy.get('#pr_id_53_list > :nth-child(2) > .p-ripple').type(tipo)
+        // cy.wait(1000)
+
+        // cy.get('p-celleditor.p-element > .p-inputtext').clear().type(detalle)
+        // cy.wait(1000)
+        
+        // // GUARDAR
+        // cy.get('[style="text-align: center;"] > .p-button-success').click()
+        // cy.wait(1000)
+        // //CANCELAR
+        // //cy.get('[style="text-align: center;"] > .p-button-warning').click()
+
+        // //RECREACIÓN Y TIEMPO LIBRE
+        // cy.get('.col-md-6 > .p-float-label > .p-inputwrapper > .p-multiselect > .p-multiselect-trigger > .p-multiselect-trigger-icon').click()
+        // cy.get('.p-multiselect-header > .p-checkbox > .p-checkbox-box').should('be.visible').click();
+        // cy.wait(3000)
+        // cy.get(':nth-child(5) > .p-toolbar > .row > .col-md-4 > .form-floating > .p-element > .p-inputswitch > .p-inputswitch-slider').click()
+        // cy.wait(1000)
+        // cy.get('#floatingReligioso').type(IdReligion)
+
+        //ASPECTO DE VIVIENDA
+        // cy.get(':nth-child(7) > .p-toolbar > .row > :nth-child(2) > .p-float-label > #floatingNombre').type(N_vivienda)
+        // cy.get(':nth-child(3) > .p-float-label > #floatingNombre').type(ComparteVivienda)
+        // cy.wait(1000)
+
+        // cy.get(':nth-child(7) > .p-toolbar > .row > :nth-child(4) > .p-float-label > .p-inputwrapper > .p-dropdown').click()
+        // cy.get('#pr_id_21_list > :nth-child(2) > .p-ripple').type(TipoVivienda)
+        // cy.wait(1000)
+
+        // cy.get(':nth-child(7) > .p-toolbar > .row > :nth-child(5) > .p-float-label > .p-inputwrapper > .p-dropdown').click()
+        // cy.get('#pr_id_22_list > :nth-child(1) > .p-ripple').type(Idtenencia)
+        // cy.wait(1000)
+
+        // cy.get(':nth-child(7) > .p-toolbar > .row > :nth-child(6) > .p-float-label > .p-inputwrapper > .p-dropdown').click()
+        // cy.get('#pr_id_23_list > :nth-child(1) > .p-ripple').type(M_Construccion)
+        // cy.wait(1000)
+
+        // cy.get(':nth-child(7) > .p-toolbar > .row > :nth-child(7) > .p-float-label > .p-inputwrapper > .p-dropdown').click()
+        // cy.get('#pr_id_24_list > :nth-child(1) > .p-ripple').type(condicion)
+        // cy.wait(1000)
+
+        cy.get(':nth-child(8) > .p-float-label > .p-inputwrapper > .p-multiselect > .p-multiselect-label-container').click()
+        cy.get('.p-multiselect-header > .p-checkbox > .p-checkbox-box').click()
+        cy.wait(1000)
+
+        cy.get(':nth-child(9) > .p-float-label > .p-inputwrapper > .p-multiselect > .p-multiselect-label-container').click()
+        cy.get('.p-multiselect-header > .p-checkbox > .p-checkbox-box').click({ multiple: true })
+        cy.wait(1000)
+
+        cy.get(':nth-child(10) > .p-float-label > .p-inputwrapper > .p-multiselect > .p-multiselect-label-container').click()
+        cy.get('.p-multiselect-header > .p-checkbox > .p-checkbox-box').click({ force: true, multiple: true });
+        cy.wait(1000)
+
+        cy.get(':nth-child(11) > .p-float-label > .p-inputwrapper > .p-multiselect > .p-multiselect-label-container').click()
+        cy.get('.p-multiselect-header > .p-checkbox > .p-checkbox-box').click({ multiple: true })
+        cy.wait(1000)
+
+
+
+
+    }); 
+ 
+    
+      
+   
 
 });
     
