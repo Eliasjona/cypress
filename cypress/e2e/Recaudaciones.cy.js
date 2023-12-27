@@ -226,7 +226,7 @@ describe ('RECAUDACIONES',() =>{
     //     cy.wait(2000);
 
     //     //notificacion
-        //cy.get('#toast-container > .ng-trigger').click
+    //cy.get('#toast-container > .ng-trigger').click
 
 
 
