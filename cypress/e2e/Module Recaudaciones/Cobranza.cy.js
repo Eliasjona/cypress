@@ -22,18 +22,6 @@ describe ('ASISTENCIA',() =>{
         cy.wait(1000);
         cy.get('.ng-tns-c62-23.ng-tns-c62-22 > .ng-star-inserted').click()
         cy.wait(1000);
-        
-    
-
-        
-
-        
-
-
-           
-
-
-
 
     })
 
