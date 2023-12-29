@@ -25,3 +25,10 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-file-upload';
+
+Cypress.Commands.add('promptForTestName', () => {
+    cy.window().then((win) => {
+      const testName = win.prompt('Ingrese el nombre de la prueba (cobranza o recaudaciones):');
+      return testName;
+    });
+  });
