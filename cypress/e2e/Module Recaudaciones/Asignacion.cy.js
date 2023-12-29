@@ -6,17 +6,19 @@ describe ('RECAUDACIONES',() =>{
     const module = 'VENTAS';
   
     //ASIGNACION
-    const PI = '00';
+    const PI = '001';
     const valorpacto ='400'
     const recaudo = '200'
     const recursos = '150'
     
     //edit
     const editpi = '001';
-    const editvalorpacto ='500'
+    const editvalorpacto ='200'
     const editrecaudo = '100'
-    const editrecursos = '10'
-    
+    const editrecursos = '50'
+
+    //accion edit asignacion
+    const idrecurs0s = '10'
     
   
     it('Validar ingreso GDS', () => {
@@ -61,29 +63,29 @@ describe ('RECAUDACIONES',() =>{
       cy.get('.mat-menu-content > :nth-child(4)').click()
       cy.wait(1000);
       //registrar PI
-      cy.get('.p-element.ng-star-inserted > .p-ripple').click()
-      cy.wait(1000);
-      cy.get(':nth-child(1) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-label').click()
-      cy.wait(1000);
-      cy.get('.p-dropdown-filter').type(PI)
-      cy.get('#pr_id_11_list > :nth-child(1) > .p-ripple') .click()
-      cy.wait(1000);
-      cy.get(':nth-child(2) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-label').click()
-      cy.get('#pr_id_12_list > :nth-child(2) > .p-ripple').click()
-      cy.wait(1000);
-      cy.get('#floatingValorPactado').type(valorpacto)
-      cy.wait(1000);
+      // cy.get('.p-element.ng-star-inserted > .p-ripple').click()
+      // cy.wait(1000);
+      // cy.get(':nth-child(1) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-label').click()
+      // cy.wait(1000);
+      // cy.get('.p-dropdown-filter').type(PI)
+      // cy.get('#pr_id_11_list > :nth-child(1) > .p-ripple') .click()
+      // cy.wait(1000);
+      // cy.get(':nth-child(2) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-label').click()
+      // cy.get('#pr_id_12_list > :nth-child(2) > .p-ripple').click()
+      // cy.wait(1000);
+      // cy.get('#floatingValorPactado').type(valorpacto)
+      // cy.wait(1000);
       //agregar descuento
-      cy.get('.p-float-label > .p-button').click()
-      cy.wait(1000);
-      cy.get('.section-table-container > .p-fluid > :nth-child(1) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-label').click()
-      cy.get('#pr_id_13_list > :nth-child(2) > .p-ripple').click()
-      cy.wait(1000);
-      cy.get('#floatingRecurso').type(recursos)
-      cy.wait(1000);
+      // cy.get('.p-float-label > .p-button').click()
+      // cy.wait(1000);
+      // cy.get('.section-table-container > .p-fluid > :nth-child(1) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-label').click()
+      // cy.get('#pr_id_13_list > :nth-child(2) > .p-ripple').click()
+      // cy.wait(1000);
+      // cy.get('#floatingRecurso').type(recursos)
+      // cy.wait(1000);
       //guardar 
-      cy.get('.p-dialog-footer > .p-element.ng-star-inserted > .p-ripple').click({force: true})
-      cy.wait(1000);
+      // cy.get('.p-dialog-footer > .p-element.ng-star-inserted > .p-ripple').click({force: true})
+      // cy.wait(1000);
       //cancelar
       //cy.get('.p-dialog-header-icons > .p-ripple').click()
       //cy.wait(1000);
@@ -101,32 +103,38 @@ describe ('RECAUDACIONES',() =>{
       cy.wait(1000);
       cy.get('.mat-menu-content > :nth-child(2)').click()
       cy.wait(1000);
-      cy.get(':nth-child(1) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-label').click({ multiple: true })
+      cy.get('.mt-3 > :nth-child(1) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-trigger').click()
       cy.wait(1000);
       cy.get('.p-dropdown-filter').clear().type(editpi)
-      cy.get('#pr_id_11_list > :nth-child(1) > .p-ripple') .click()
+      cy.get('#pr_id_11_list > :nth-child(2) > .p-ripple') .click()
       cy.wait(1000);
-      cy.get(':nth-child(2) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-label').click()
-      cy.get('#pr_id_12_list > :nth-child(2) > .p-ripple').click()
+      cy.get('.mt-3 > :nth-child(2) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-trigger').click()
+      cy.get('#pr_id_12_list > :nth-child(3) > .p-ripple').click()
       cy.wait(1000);
       cy.get('#floatingValorPactado').clear().type(editvalorpacto)
       cy.wait(1000);
-      //agregar descuento
+      cy.get('.section-table-container > .p-fluid > :nth-child(1) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-label').eq(0).click({ force: true })
+      cy.get(':nth-child(4) > .p-ripple > .ng-star-inserted').click()
+      cy.wait(1000);
+      cy.get('.custom-card-spacing.ng-valid > .card > .section-table-container > .p-fluid > :nth-child(3) > .p-float-label > .p-inputwrapper > .p-inputnumber > #floatingRecurso').eq(0).clear().type(editrecursos)
+      cy.wait(1000);
+      //agregar descuento edit
       cy.get('.p-float-label > .p-button').click()
       cy.wait(1000);
-      cy.get('.section-table-container > .p-fluid > :nth-child(1) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-label').click()
-      cy.get('#pr_id_13_list > :nth-child(2) > .p-ripple').click()
+      cy.get('.custom-card-spacing.ng-untouched > .card > .section-table-container > .p-fluid > :nth-child(1) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-trigger').eq(0).click({ force: true })
+      cy.get(':nth-child(4) > .p-ripple > .ng-star-inserted').click()
       cy.wait(1000);
-      cy.get('#floatingRecurso').clear().type(editrecursos)
+      cy.get('.custom-card-spacing.ng-invalid > .card > .section-table-container > .p-fluid > :nth-child(3) > .p-float-label > .p-inputwrapper > .p-inputnumber > #floatingRecurso').type(idrecurs0s)
       cy.wait(1000);
       //guardar 
-      cy.get('.p-dialog-footer > .p-element.ng-star-inserted > .p-ripple').click({force: true})
-      cy.wait(1000);
+      // cy.get('.p-dialog-footer > .p-element.ng-star-inserted > .p-ripple').click({force: true})
+      // cy.wait(1000);
       //cancelar
-      //cy.get('.p-dialog-header-icons > .p-ripple').click()
-      //cy.wait(1000);
+      cy.get('.p-dialog-header-icons > .p-ripple').click()
+      cy.wait(1000);
       //acciones 
-
+      cy.get('.cdk-column-Actions > .mat-focus-indicator').click()
+      cy.wait(1000);
       //anular
       //cy.get('.cdk-column-Actions > .mat-focus-indicator').click()
       //cy.wait(1000);

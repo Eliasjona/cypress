@@ -8,14 +8,14 @@ describe ('RECAUDACIONES',() =>{
   const FechaFin = '2023-12-28';
 
   //registro nueva recaudacion
-  const idfecha = '2023-12-28';
-  const idcompra = '15';
-  const Idmonto = '15000';
+  const idfecha = '2023-12-29';
+  const idcompra = '5';
+  const Idmonto = '50000';
   const idbanco = 'BANCO INTERNACIONAL';
 
   //editar
   const fecha2 = '2023-12-29';
-  const N_Compra = '50';
+  const N_Compra = '10';
   const Monto = '25000';
   const banco = 'GUAYAQUIL'
 

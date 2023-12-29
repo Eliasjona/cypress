@@ -44,6 +44,8 @@ describe ('RECAUDACIONES',() =>{
       //Acciones-------------------------------------------------------------------------------------------------------------------
       cy.get(':nth-child(1) > .cdk-column-Actions > .mat-focus-indicator').click()
       cy.wait(1000);    
+      // cy.get(':nth-child(2) > .cdk-column-Actions > .mat-focus-indicator').click()
+      // cy.wait(1000);  
      // Distribuir----------------------------------------------------------------------------------------------------------------
         cy.get('.mat-menu-content > :nth-child(3)').click();
         cy.wait(2000);
