@@ -13,6 +13,12 @@ describe ('RECAUDACIONES',() =>{
   const Idmonto = '15000';
   const idbanco = 'BANCO INTERNACIONAL';
 
+  //editar
+  const fecha2 = '2023-12-29';
+  const N_Compra = '50';
+  const Monto = '25000';
+  const banco = 'GUAYAQUIL'
+
   it('Validar ingreso GDS', () => {
   cy.visit('http://172.16.11.24:7200/guest/sign-in');
   cy.get('#floatingUsername').type(user);
@@ -44,6 +50,7 @@ describe ('RECAUDACIONES',() =>{
       cy.wait(2000);
 
       //notificacion -----------------------------------------------------------------------------------------------------------
+
       //cy.get('#toast-container > .ng-trigger').click()
       //const desiredDate = '2023-12-18';
       //filtros-----------------------------------------------------------------------------------------------------------
@@ -104,11 +111,12 @@ describe ('RECAUDACIONES',() =>{
 
 
       // //Agregar Nueva Recaudacion
+      
       cy.get('[ptooltip="New Register"] > .p-ripple').click()
-      cy.get('.p-calendar.ng-tns-c89-128').should('be.visible', { timeout: 40000 }).click();
+      cy.get('.p-calendar.ng-tns-c89-127').should('be.visible', { timeout: 40000 }).click();
 
       // Buscar el input de fecha dentro del calendario y escribir en él
-      cy.get('.p-calendar.ng-tns-c89-128 input').type(idfecha, { force: true }).type('{enter}', { force: true });
+      cy.get('.p-calendar.ng-tns-c89-127 input').type(idfecha, { force: true }).type('{enter}', { force: true });
 
       cy.get('#floatingNcompra').type(idcompra)
       cy.get('.p-inputnumber > .p-inputtext').type(Idmonto)
@@ -170,35 +178,30 @@ describe ('RECAUDACIONES',() =>{
     cy.wait(1000);
 
     //Visualizar
-    cy.get('.mat-menu-content > :nth-child(2)').click();
-    cy.wait(1000);
+    cy.get('.mat-menu-content > :nth-child(1)').click();
+    cy.wait(2000);
     cy.get('.p-dialog-header-icons > .p-ripple').click()
+    cy.wait(1000)
     //-----------------------------------------------------------------------------------------------------------------------------
     // Editar
-    // cy.get('.mat-menu-content > :nth-child(3)').click()
-    // cy.get('#floatingFecha > .p-calendar > .p-inputtext').clear().type('2023-12-09').type('{enter}')
-    // cy.get('#floatingNcompra').clear().type("70")
-    // cy.get('.p-inputnumber > .p-inputtext').clear().type("35000")
-    // cy.get('.p-fluid > :nth-child(4)').click()
-    // cy.get('.p-dropdown-filter').type("Guayaquil")
-    // cy.get('#pr_id_6_list > .p-element.ng-star-inserted > .p-ripple').click()
-    // cy.wait(2000);
-   //-------------------------------------------------------------------------------------------------------------------------------
-    //cancelar
-    cy.get('.p-dialog-header-icons').click();
+    cy.get(':nth-child(1) > .cdk-column-Actions > .mat-focus-indicator').click()
     cy.wait(1000);
-
-    // //Guardar
-    // cy.get('.p-dialog-footer > .p-element.ng-star-inserted').click();
-
-    // //limpiar recaudaciones
-    // cy.get(':nth-child(2) > p-button.p-element > .p-ripple').click()
-
-    // //buscar recaudaciones 
-    // cy.get(':nth-child(2) > :nth-child(1) > p-button.p-element > .p-ripple').click();
-    // cy.wait(2000);
-
-
+    cy.get('.mat-menu-content > :nth-child(2)').click()
+    cy.wait(1000);
+    cy.get('#floatingFecha > .p-calendar > .p-inputtext').clear().type(fecha2).type('{enter}')
+    cy.wait(1000);
+    cy.get('#floatingNcompra').clear().type(N_Compra)
+    cy.wait(1000);
+    cy.get('.p-inputnumber > .p-inputtext').clear().type(Monto)
+    cy.wait(1000);
+    cy.get('.p-fluid > :nth-child(4)').click()
+    cy.wait(1000);
+    cy.get('.p-dropdown-filter').type(banco)
+    cy.get('#pr_id_12_list > .p-element.ng-star-inserted > .p-ripple').click()
+    cy.wait(1000);
+    cy.get('.p-dialog-footer > .p-element.ng-star-inserted > .p-ripple').click()
+    cy.wait(2000);
+   //-------------------------------------------------------------------------------------------------------------------------------
   
   });
 

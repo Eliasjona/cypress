@@ -10,13 +10,13 @@ describe ('RECAUDACIONES',() =>{
     const FechaInicio = '2023-12-28';
     const FechaFin = '2023-12-28';
     const idcustumer = '';
-    const Idfecha = '2023-12-28';
+    const Idfecha = '2023-12-21';
     const CodigoSwift = 'PRUEBA';
     const ESTADO = 'PENDIENTE';
 
     //EDITAR 
-    const idswift = 'PRUEBA';
-    const fecha = '2023-12-29';
+    const idswift = 'PRUEBA1';
+    const Id_fecha = "2023-12-23";
     const status = 'APROBADO';
     const CUSTUMER = 'MIANPA S.A.';
   
@@ -82,9 +82,9 @@ describe ('RECAUDACIONES',() =>{
             { filePath: "images/capture.png", encoding: 'base64' },
             // Agrega más objetos si necesitas subir más imágenes
           ]);
-        cy.wait(2000);
-        cy.get('.p-dialog-footer > .p-element.ng-star-inserted > .p-ripple').click()
-        cy.wait(2000);
+      cy.wait(2000);
+      cy.get('.p-dialog-footer > .p-element.ng-star-inserted > .p-ripple').click()
+      cy.wait(2000);
         
      //acciones
      cy.get(':nth-child(1) > .cdk-column-Actions > .mat-focus-indicator > .mat-button-wrapper > .mat-icon').click()
@@ -114,24 +114,28 @@ describe ('RECAUDACIONES',() =>{
         cy.wait(1000);
         cy.get('.mat-menu-content > :nth-child(3)').click()
         cy.wait(1000);
-        cy.get('#floatingCodigoSwift').type(idswift)
+        cy.get('#floatingCodigoSwift').clear().type(idswift)
         cy.wait(1000);
-        cy.get('#floatingFecha > .p-calendar > .p-inputtext').type(fecha)
+        cy.get('.p-calendar-clear-icon').click()
+        cy.wait(1000)
+        cy.get('#floatingFecha > .p-calendar > .p-inputtext').type(Id_fecha)
         cy.wait(1000);
         cy.get(':nth-child(4) > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-trigger').click()
+        cy.get('#pr_id_19_list > :nth-child(1) > .p-ripple').click()
         cy.wait(1000);
-        cy.get('#pr_id_18_list > :nth-child(2) > .p-ripple').type(status)
-        cy.wait(1000);
-        cy.get('.md\:col-8 > .p-float-label > .p-inputwrapper > .p-dropdown > .p-dropdown-trigger').type(CUSTUMER)
+        
+        cy.get('#pr_id_20_label').click();
+
+        cy.get('#pr_id_20_list > :nth-child(1) > .p-ripple').click()
         cy.wait(1000);
         cy.get('.p-inputswitch-slider').click()
         cy.wait(1000);
         //guardar
-        //cy.get('.p-dialog-footer > .p-element.ng-star-inserted > .p-ripple').click()
-        //cy.wait(1000);
-        //cancelar
-        cy.get('.p-dialog-header-icons > .p-ripple').click()
+        cy.get('.p-dialog-footer > .p-element.ng-star-inserted > .p-ripple').click()
         cy.wait(1000);
+        //cancelar
+      //   cy.get('.p-dialog-header-icons > .p-ripple').click()
+      //   cy.wait(1000);
         
    });
   
