@@ -22,18 +22,19 @@ class ClaseRecaudaciones {
       });
 
       it('Ingresar Recaudaciones', () => {
-        cy.get('.p-dialog-header-close-icon').click();
-        cy.wait(1000);
-        cy.get('.p-inputtext').type('VENTAS');
+        cy.get('.p-inputtext').type(module);
         cy.wait(1000);
         cy.get('.ng-tns-c62-22.layout-root-menuitem').click()
         cy.get('.ng-tns-c62-24.ng-tns-c62-22 > .ng-star-inserted').click()
         cy.get('.layout-menu-button > .pi').click();
+        cy.wait(1000);
+        
       
       });
 
       it('Registro de nueva recaudacion', () => {
         cy.get('[ptooltip="New Register"] > .p-ripple').click();
+        cy.wait(12000);
         cy.get('.p-calendar.ng-tns-c89-127 input').type(idfecha, { force: true }).type('{enter}', { force: true });
         cy.get('#floatingNcompra').type(idcompra);
         cy.get('.p-inputnumber > .p-inputtext').type(Idmonto);
