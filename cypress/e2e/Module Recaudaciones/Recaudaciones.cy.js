@@ -31,20 +31,13 @@ describe ('RECAUDACIONES',() =>{
       cy.get('#floatingOP > .p-dropdown > .p-dropdown-label').type(empresa);
       cy.get('.p-fluid > .text-center').click();
       cy.wait(1000);
-
-     
-        
-      cy.get('.p-dialog-header-close-icon').click();
-      cy.wait(1000);
-
-      cy.get('.p-toast-message-content')
       
-        
-      cy.get('.p-inputtext').type(module);
+      
+      cy.get('.p-inputtext').eq(0).type(module);
       cy.wait(1000);
       
-      cy.get('.ng-tns-c62-22.layout-root-menuitem').click()
-      cy.get('.ng-tns-c62-24.ng-tns-c62-22 > .ng-star-inserted').click()
+      cy.get('.ng-tns-c62-21.layout-root-menuitem').click()
+      cy.get('.ng-tns-c62-23.ng-tns-c62-21 > .ng-star-inserted').click()
       cy.get('.layout-menu-button > .pi').click();
       
       cy.wait(2000);
