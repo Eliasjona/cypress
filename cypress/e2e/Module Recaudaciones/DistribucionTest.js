@@ -1,4 +1,4 @@
-import ClaseLogin from "../../Login/login";
+import ClaseLogin from "../Login/login";
 
 
 class ClaseDistribucion {
