@@ -20,18 +20,14 @@ class ClaseDistribucion {
     const CUSTUMER = 'MIANPA S.A.';  
       
       describe('Distribucion',() =>{
-         before(() => {
-            ClaseLogin.ingresoLogin();
-         
-         });
-
+      
          it('Ingresar Recaudaciones', () => {
             ClaseDistribucion.ingresarRecaudaciones();
          });
 
         it ('Registrar Distribucion', () => {
-         ClaseLogin.ingresoLogin();
-         cy.visit('http://172.16.11.24:7200/gds/mf-ventas/recaudaciones');
+         // ClaseLogin.ingresoLogin();
+         // cy.visit('http://172.16.11.24:7200/gds/mf-ventas/recaudaciones');
           cy.get('[ptooltip="New Register"] > .p-ripple').scrollIntoView().should('be.visible').click();
 
           cy.get('.p-calendar.ng-tns-c89-127').should('be.visible', { timeout: 40000 }).click();
